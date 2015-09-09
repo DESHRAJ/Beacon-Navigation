@@ -1,11 +1,24 @@
 package com.deshraj.siftr.navin;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.estimote.sdk.BeaconManager;
+import com.estimote.sdk.Region;
+
+
 public class ListBeaconsActivity extends AppCompatActivity {
+    private static final String TAG = ListBeaconsActivity.class.getSimpleName();
+
+    public static final String EXTRAS_TARGET_ACTIVITY = "extrasTargetActivity";
+    public static final String EXTRAS_BEACON = "extrasBeacon";
+
+    private static final int REQUEST_ENABLE_BT = 1234;
+    private static final Region ALL_ESTIMOTE_BEACONS_REGION = new Region("rid", null, null, null);
+
+    private BeaconManager beaconManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
