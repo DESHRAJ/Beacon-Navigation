@@ -1,24 +1,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <Button
-        android:id="@+id/list_all_beacons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="See all the nearby Beacons"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/list_all_beacons"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:text="See all the nearby Beacons"-->
+        <!--android:allowUndo="false"-->
+        <!--android:layout_marginTop="150dp"-->
+        <!--android:layout_weight="0.06" />-->
 
-    <Button
-        android:id="@+id/notify_me"
+    <!--<Button-->
+        <!--android:id="@+id/notify_me"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:text="Notification Demo"-->
+        <!--android:layout_weight="0.08" />-->
+
+    <TextView
+        android:id="@+id/beacon_textfield"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Beacon Notification Part"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
