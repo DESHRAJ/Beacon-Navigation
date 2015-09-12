@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
@@ -29,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         beaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                Log.d(TAG, "Ranged beacons: " + beacons);
+//                Log.d(TAG, "Ranged beacons: " + beacons);
+                ((TextView)findViewById(R.id.beacon_textfield)).setText("Ranged beacons: " + beacons);
+
             }
         });
 //
@@ -97,5 +100,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showbeacons(){
+        beaconManager = new BeaconManager(this);
+
+        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
+            @Override
+            public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
+                Log.d(TAG, "Ranged beacons: " + beacons);
+                ((TextView)findViewById(R.id.beacon_textfield)).setText("Ranged beacons: " + beacons);
+            }
+        });
     }
 }
